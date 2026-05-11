@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Data
 public class ClientDto {
 
     private Long id;

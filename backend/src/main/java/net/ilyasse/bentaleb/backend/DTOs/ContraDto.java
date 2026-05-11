@@ -9,6 +9,7 @@ import net.ilyasse.bentaleb.backend.entity.StatutContra;
 import java.util.Date;
 import java.util.List;
 
+@Data
 public abstract class ContraDto {
     private Long id;
     private Date dateSouscription;

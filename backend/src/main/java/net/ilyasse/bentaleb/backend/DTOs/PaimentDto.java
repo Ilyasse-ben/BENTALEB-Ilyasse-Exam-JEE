@@ -9,9 +9,7 @@ import net.ilyasse.bentaleb.backend.entity.TypePaiment;
 
 import java.util.Date;
 
-@Entity
-@Getter
-@Setter
+
 @Data
 public class PaimentDto {
     @Id

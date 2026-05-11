@@ -7,6 +7,7 @@ import net.ilyasse.bentaleb.backend.entity.*;
 import net.ilyasse.bentaleb.backend.mapper.AssurenceMapper;
 import net.ilyasse.bentaleb.backend.repository.ClientRepository;
 import net.ilyasse.bentaleb.backend.repository.ContraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,15 +17,22 @@ import java.util.stream.Collectors;
 @Transactional
 @AllArgsConstructor
 public class AssurenceDervoiceImp implements AssurenceService{
-
+    @Autowired
     private ClientRepository clientRepository;
+    @Autowired
     private ContraRepository contraRepository;
+    @Autowired
     private AssurenceMapper mapper;
     @Override
     public ClientDto ajouteClient(ClientDto clientDto) {
         Client client = mapper.fromClientDto(clientDto);
         Client savedClient = clientRepository.save(client);
         return mapper.fromClient(savedClient);
+    }
+    @Override
+    public ClientDto getClient(Long clientId) {
+
+        return mapper.fromClient(clientRepository.findById(clientId).orElseThrow());
     }
 
     @Override
@@ -35,7 +43,7 @@ public class AssurenceDervoiceImp implements AssurenceService{
     }
 
     @Override
-    public List<ClientDto> getAllClient(ClientDto clientDto) {
+    public List<ClientDto> getAllClient() {
         List<Client> clients = clientRepository.findAll();
         return clients.stream()
                 .map(mapper::fromClient)

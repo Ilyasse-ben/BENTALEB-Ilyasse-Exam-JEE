@@ -3,7 +3,9 @@ package net.ilyasse.bentaleb.backend.mapper;
 import net.ilyasse.bentaleb.backend.DTOs.*;
 import net.ilyasse.bentaleb.backend.entity.*;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AssurenceMapper {
     // --- Mappage CLIENT ---
     public ClientDto fromClient(Client client) {

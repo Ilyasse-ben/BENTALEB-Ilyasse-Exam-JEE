@@ -7,8 +7,9 @@ import java.util.List;
 
 public interface AssurenceService {
     ClientDto ajouteClient(ClientDto clientDto);
+    ClientDto getClient(Long clientId);
     void deleteClient(Long clientId);
-    List<ClientDto> getAllClient(ClientDto clientDto);
+    List<ClientDto> getAllClient();
     ContraDto ajouteContra(ContraDto contraDto);
     List<ContraDto> getCOntraUser(Long clientId);
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ClientServ } from '../service/client-serv';
 import { Router } from '@angular/router';
@@ -31,7 +31,7 @@ export class Client implements OnInit {
     }
     getAllData() {
       this.clientSer.getAllclient().subscribe({
-        next: (data) => { this.data = data; },
+        next: (data) => { this.data = data; console.log(data)},
         error: (err) => { this.errorMessage = err.message; console.log(err.message) }
       });
     }

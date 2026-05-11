@@ -1,4 +1,4 @@
-package net.ilyasse.backend;
+package net.ilyasse.bentaleb.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
